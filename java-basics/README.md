@@ -94,3 +94,11 @@ Contents of `out.txt`
 - Level 1: Make the program work for any number of files.
 - Level 2: Make sure that the file read and write operations are on a separate thread 
 - Level 3: Make sure that the read operations can be all done in parallel (i.e. we are not waiting for file 1 to be read before we read file 2)
+
+#### Submissions 
+
+- Create a new repository under your own account (not a fork of this repo) 
+- Create a `files` folder and copy `in1.txt` and `in2.txt` into it
+- Finish the assignment, and upload the `out.txt` file to the `files` folder 
+- The repository should contain the final working code as well as the `out.txt` file
+- Submit your assignment on [this form](https://docs.google.com/forms/d/e/1FAIpQLSd04RVGJCkye5RvYhARL1cN2TSWZmLw9LeCTLbk1iw7lv5JEw/viewform)
