@@ -27,3 +27,13 @@ tasks.withType<Jar> {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(configurations.runtimeClasspath.get().map({ if (it.isDirectory) it else zipTree(it) }))
 }
+
+/*
+ * Change these if you are using a different version of Java
+ * If using Gradle 7.4 or below, you can use Java 17
+ * If using Gradle 7.6 or 8, we can use Java 19
+ */
+java {
+    sourceCompatibility = JavaVersion.VERSION_19
+    targetCompatibility = JavaVersion.VERSION_19
+}
