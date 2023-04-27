@@ -1,5 +1,10 @@
 # Basic Java Project 
 
+## Diagrams 
+
+### 1. How Retrofit and GSON work together
+
+![](./docs/retrofit-gson-flow.png)
 
 ## Build 
 
