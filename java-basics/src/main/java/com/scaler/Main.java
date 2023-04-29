@@ -27,7 +27,8 @@ public class Main {
                 System.out.println(response);
                 break;
             case "rest":
-                RestClient restClient = new RestClient();
+                var restClient = new RestClient();
+                var x = 10;
                 var apiResponse = restClient.getApi().getPhotos().execute();
 
                 apiResponse.body().forEach(photo -> {
