@@ -83,4 +83,14 @@ LB
 145.34.22.11:80
 -> 145.34.22.12:80
 -> 145.34.22.13:80
-	
+
+
+## Assignments 
+
+### ASG 03 (v2.0) 
+
+Complete the TODOS in this project. 
+All todos are marked as `// TODO` in the code. 
+
+Submit in same form as ASG 03
+https://docs.google.com/forms/d/e/1FAIpQLSfYBoju84gWZNybklLwrqiATCiK_GkJvNIzlk-0A1tGH1rskQ/viewform
