@@ -5,6 +5,7 @@ import com.scaler.taskmanager.tasks.dtos.UpdateTaskDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -19,8 +20,13 @@ public class TasksController {
     // TODO 03: create a TaskReponseDTO and do not return Task entity directly
 
     @GetMapping("")
-    ResponseEntity<List<Task>> getAllTasks() {
-        var tasks = tasksService.getAllTasks();
+    ResponseEntity<List<Task>> getAllTasks(
+            @RequestParam(value = "beforeDate", required = false) Date beforeDate,
+            @RequestParam(value = "afterDate", required = false) Date afterDate,
+            @RequestParam(value = "completed", required = false) Boolean completed
+    ) {
+        var taskFilter = TasksService.TaskFilter.fromQueryParams(beforeDate, afterDate, completed);
+        var tasks = tasksService.getAllTasks(taskFilter);
         return ResponseEntity.ok(tasks);
     }
 

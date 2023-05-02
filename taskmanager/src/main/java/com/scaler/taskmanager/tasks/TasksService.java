@@ -11,8 +11,25 @@ public class TasksService {
     private List<Task> tasks = new ArrayList<>();
     private Integer id = 0;
 
-    public List<Task> getAllTasks() {
-        return tasks;
+    public List<Task> getAllTasks(TaskFilter taskFilter) {
+        if (taskFilter == null) {
+            return tasks;
+        } else {
+            var filteredTasks = tasks.stream().filter(task -> {
+                if (taskFilter.beforeDate != null && task.getDueDate().after(taskFilter.beforeDate)) {
+                    return false;
+                }
+                if (taskFilter.afterDate != null && task.getDueDate().before(taskFilter.afterDate)) {
+                    return false;
+                }
+                if (taskFilter.completed != null && task.getCompleted() != taskFilter.completed) {
+                    return false;
+                }
+                return true;
+            }).toList();
+            return filteredTasks;
+        }
+
     }
 
     public Task getTaskById(Integer id) {
@@ -49,9 +66,26 @@ public class TasksService {
         tasks.remove(task);
     }
 
-    public static class TaskNotFoundException extends IllegalStateException {
+    class TaskNotFoundException extends IllegalStateException {
         public TaskNotFoundException(Integer id) {
             super("Task with id " + id + " not found");
+        }
+    }
+
+    public static class TaskFilter {
+        Date beforeDate;
+        Date afterDate;
+        Boolean completed;
+
+        static TaskFilter fromQueryParams(Date beforeDate, Date afterDate, Boolean completed) {
+            if (beforeDate == null && afterDate == null && completed == null) {
+                return null;
+            }
+            TaskFilter taskFilter = new TaskFilter();
+            taskFilter.beforeDate = beforeDate;
+            taskFilter.afterDate = afterDate;
+            taskFilter.completed = completed;
+            return taskFilter;
         }
     }
 }
