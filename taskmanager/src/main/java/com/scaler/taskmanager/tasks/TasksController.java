@@ -54,5 +54,8 @@ public class TasksController {
     ResponseEntity<String> handleTaskNotFoundException(TasksService.TaskNotFoundException e) {
         return ResponseEntity.notFound().build();
     }
+    /*
+    Figure out how to handle 2 or 3 types of exceptions in the same @ExceptionHandler
+     */
 
 }
