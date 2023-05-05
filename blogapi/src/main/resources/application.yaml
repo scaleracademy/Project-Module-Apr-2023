@@ -1,0 +1,11 @@
+server:
+  port: 8822
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./blog.db
+  jpa:
+    generate-ddl: on
+    hibernate:
+      ddl-auto: update
+    show-sql: true
