@@ -3,10 +3,13 @@ package com.scaler.blogapi.users;
 import com.scaler.blogapi.common.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -23,4 +26,9 @@ public class UserEntity extends BaseEntity {
     String password;        // TODO: do not save password in plain text
     @Column
     String bio;
+
+    @ManyToMany(/* TODO: figure this out */ )
+    List<UserEntity> followers;
+    @ManyToMany(/* TODO: figure this out */ )
+    List<UserEntity> following;
 }
