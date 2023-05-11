@@ -11,7 +11,8 @@ public class UsersService {
 
     public UsersService(
             @Autowired UsersRepository usersRepository,
-            @Autowired ModelMapper modelMapper) {
+            @Autowired ModelMapper modelMapper
+    ) {
         this.usersRepository = usersRepository;
         this.modelMapper = modelMapper;
     }
