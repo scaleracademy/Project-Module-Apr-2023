@@ -183,3 +183,8 @@ intput set - 2;  then P = 1/2^8
 
 
 ```
+
+## Password Hashing 
+
+![](./docs/pw-hash-1.png)
+![](./docs/pw-hash-2.png)
