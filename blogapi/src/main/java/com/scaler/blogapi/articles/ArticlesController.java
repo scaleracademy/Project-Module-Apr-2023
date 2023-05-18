@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class ArticlesController {
 
     @GetMapping("")
-    ResponseEntity<Void> getAllArticles() {
+    ResponseEntity<String> getAllArticles() {
         // TODO 05:
         //  1. call articlesService.getAllArticles()
         //  2. respond with 200 OK and list of articles
@@ -18,8 +18,7 @@ public class ArticlesController {
         //  2. add filter by tag `?tag=java`
         //  3. add sort by date `?sortBy=date`
         //  4. add filter by date range `?from=2021-01-01&to=2021-01-31`
-
-        return null;
+        return ResponseEntity.ok("All articles");
     }
 
     @GetMapping("/{id}")
