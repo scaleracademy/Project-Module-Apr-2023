@@ -2,7 +2,11 @@ package com.scaler.blogapi;
 
 import com.scaler.blogapi.security.JWTTokenService;
 import com.scaler.blogapi.security.TokenService;
+import com.scaler.blogapi.tokens.UserTokenRepository;
+import com.scaler.blogapi.tokens.UserTokenService;
+import com.scaler.blogapi.users.UsersRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +23,8 @@ public class BlogapiApplication {
     public static void main(String[] args) {
         SpringApplication.run(BlogapiApplication.class, args);
     }
+
+    private final static String TOKEN_SERVICE_TYPE = "SST"; // "SST" or "JWT"
 
     @Bean
     @Scope(BeanDefinition.SCOPE_SINGLETON)
@@ -54,8 +60,18 @@ public class BlogapiApplication {
 
     @Bean
     @Scope(BeanDefinition.SCOPE_SINGLETON)
-    public TokenService tokenService() {
-        return new JWTTokenService();
+    public TokenService tokenService(
+            @Autowired UserTokenRepository userTokenRepository,
+            @Autowired UsersRepository usersRepository
+    ) {
+        switch (TOKEN_SERVICE_TYPE) {
+            case "SST":
+                return new UserTokenService(userTokenRepository, usersRepository);
+            case "JWT":
+                return new JWTTokenService();
+            default:
+                throw new IllegalStateException("Unexpected value: " + TOKEN_SERVICE_TYPE);
+        }
     }
 
 }
