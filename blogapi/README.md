@@ -192,3 +192,7 @@ intput set - 2;  then P = 1/2^8
 ## Crypto Signature 
 
 ![](./docs/jwt-hash-signature.png)
+
+## Spring Authentication Filters 
+
+![](./docs/spring-authentication-filters.png)

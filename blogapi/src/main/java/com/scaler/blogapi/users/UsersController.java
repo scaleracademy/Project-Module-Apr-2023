@@ -4,6 +4,7 @@ import com.scaler.blogapi.security.TokenService;
 import com.scaler.blogapi.users.dto.CreateUserRequestDTO;
 import com.scaler.blogapi.users.dto.LoginUserRequestDTO;
 import com.scaler.blogapi.users.dto.UserResponseDTO;
+import lombok.Getter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -48,6 +49,23 @@ public class UsersController {
         var userResponse = modelMapper.map(savedUser, UserResponseDTO.class);
         userResponse.setToken(tokenService.createAuthToken(savedUser.getUsername()));
         return ResponseEntity.accepted().body(userResponse);
+    }
+
+    @GetMapping("/me")
+    ResponseEntity<UserResponseDTO> getCurrentUser() {
+        // TODO 03:
+        //  1. get the username from the token
+        //  2. call usersService.getUserByUsername() with that username
+        //  3. respond with 200 OK and the user details
+        return null;
+    }
+
+    @GetMapping("/{id}")
+    ResponseEntity<UserResponseDTO> getUserById() {
+        // TODO 05:
+        //  1. call usersService.getUserById() with the id from the path
+        //  2. respond with 200 OK and the user details
+        return null;
     }
 
     @PatchMapping("/{id}")

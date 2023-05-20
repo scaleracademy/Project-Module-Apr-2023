@@ -1,6 +1,7 @@
 package com.scaler.blogapi.security;
 
 
+import com.scaler.blogapi.security.jwt.JWTTokenService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

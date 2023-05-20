@@ -1,9 +1,9 @@
 package com.scaler.blogapi;
 
-import com.scaler.blogapi.security.JWTTokenService;
+import com.scaler.blogapi.security.jwt.JWTTokenService;
 import com.scaler.blogapi.security.TokenService;
-import com.scaler.blogapi.tokens.UserTokenRepository;
-import com.scaler.blogapi.tokens.UserTokenService;
+import com.scaler.blogapi.security.tokens.UserTokenRepository;
+import com.scaler.blogapi.security.tokens.UserTokenService;
 import com.scaler.blogapi.users.UsersRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

@@ -1,4 +1,4 @@
-package com.scaler.blogapi.tokens;
+package com.scaler.blogapi.security.tokens;
 
 import com.scaler.blogapi.common.BaseEntity;
 import com.scaler.blogapi.users.UserEntity;

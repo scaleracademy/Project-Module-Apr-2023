@@ -1,4 +1,4 @@
-package com.scaler.blogapi.tokens;
+package com.scaler.blogapi.security.tokens;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

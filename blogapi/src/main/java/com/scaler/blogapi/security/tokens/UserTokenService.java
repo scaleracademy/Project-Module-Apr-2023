@@ -1,8 +1,7 @@
-package com.scaler.blogapi.tokens;
+package com.scaler.blogapi.security.tokens;
 
 import com.scaler.blogapi.security.TokenService;
 import com.scaler.blogapi.users.UsersRepository;
-import com.scaler.blogapi.users.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

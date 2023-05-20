@@ -1,7 +1,8 @@
-package com.scaler.blogapi.security;
+package com.scaler.blogapi.security.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.scaler.blogapi.security.TokenService;
 
 public class JWTTokenService implements TokenService {
 
