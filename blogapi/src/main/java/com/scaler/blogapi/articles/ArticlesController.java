@@ -30,13 +30,13 @@ public class ArticlesController {
     }
 
     @PostMapping("")
-    ResponseEntity<Void> createArticle() {
+    ResponseEntity<String> createArticle() {
         // TODO 08:
         //  1. create a ArticleCreateDTO (containing title, description, body, tags)
         //  2. call articlesService.createArticle() with those details
         //  3. check that client sends a token which validates user is logged in
         //  4. respond with 202 ACCEPTED if article is created successfully
-        return null;
+        return ResponseEntity.accepted().body("Article created successfully");
     }
 
     @PatchMapping("/{id}")

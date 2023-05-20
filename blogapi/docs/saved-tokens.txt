@@ -1,0 +1,13 @@
+{
+    "username": "sanket",
+    "email": "sanket@scaler.com",
+    "bio": null,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYW5rZXQiLCJpc3MiOiJibG9nLWFwaSIsImlhdCI6MTY4NDU1MTQ3MywiZXhwIjoxNjg0NjM3ODczfQ.c_E2ZwPjVd3Hf8e8N6X4Oimtn6-rag8xzt1XFjcLqXk"
+}
+
+{
+    "username": "bhanu",
+    "email": "bhanu@scaler.com",
+    "bio": null,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiaGFudSIsImlzcyI6ImJsb2ctYXBpIiwiaWF0IjoxNjg0NTUxNTQyLCJleHAiOjE2ODQ2Mzc5NDJ9.SFpXYg_fZWTXhoLb9_rLrfHCMTeM9F0YdF-rJBY_OCU"
+}
