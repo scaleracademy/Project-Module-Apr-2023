@@ -42,8 +42,7 @@ public class UserAuthentication implements Authentication {
 
     @Override
     public String getPrincipal() {
-        // TODO: return username
-        return null;
+        return this.username;
     }
 
     @Override

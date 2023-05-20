@@ -1,8 +1,5 @@
 package com.scaler.blogapi.security;
 
-import com.scaler.blogapi.security.jwt.JWTTokenService;
-import com.scaler.blogapi.security.jwt.JwtAuthenticationFilter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -27,7 +24,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/users/login", "/users/signup").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated();
-        http.addFilterBefore(new JwtAuthenticationFilter(tokenService), AnonymousAuthenticationFilter.class);
+        http.addFilterBefore(new UserAuthenticationFilter(tokenService), AnonymousAuthenticationFilter.class);
         return http.build();
     }
 }

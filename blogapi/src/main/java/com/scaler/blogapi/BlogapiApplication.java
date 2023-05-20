@@ -23,7 +23,7 @@ public class BlogapiApplication {
         SpringApplication.run(BlogapiApplication.class, args);
     }
 
-    private final static String TOKEN_SERVICE_TYPE = "JWT"; // "SST" or "JWT"
+    private final static String TOKEN_SERVICE_TYPE = "SST"; // "SST" or "JWT"
 
     @Bean
     @Scope(BeanDefinition.SCOPE_SINGLETON)

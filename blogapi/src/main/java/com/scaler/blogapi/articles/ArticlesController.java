@@ -1,6 +1,7 @@
 package com.scaler.blogapi.articles;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,13 +31,15 @@ public class ArticlesController {
     }
 
     @PostMapping("")
-    ResponseEntity<String> createArticle() {
+    ResponseEntity<String> createArticle(
+            @AuthenticationPrincipal String username
+    ) {
         // TODO 08:
         //  1. create a ArticleCreateDTO (containing title, description, body, tags)
         //  2. call articlesService.createArticle() with those details
         //  3. check that client sends a token which validates user is logged in
         //  4. respond with 202 ACCEPTED if article is created successfully
-        return ResponseEntity.accepted().body("Article created successfully");
+        return ResponseEntity.accepted().body("Article created by " + username + " successfully");
     }
 
     @PatchMapping("/{id}")

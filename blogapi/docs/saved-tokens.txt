@@ -11,3 +11,17 @@
     "bio": null,
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiaGFudSIsImlzcyI6ImJsb2ctYXBpIiwiaWF0IjoxNjg0NTUxNTQyLCJleHAiOjE2ODQ2Mzc5NDJ9.SFpXYg_fZWTXhoLb9_rLrfHCMTeM9F0YdF-rJBY_OCU"
 }
+
+{
+    "username": "manish",
+    "email": "manish@scaler.com",
+    "bio": null,
+    "token": "b68f451a-7d21-441a-b5c9-e2a355350838"
+}
+
+{
+    "username": "ashok",
+    "email": "ashok@scaler.com",
+    "bio": null,
+    "token": "9df4e78e-e98c-453f-81a6-9a5cb4ff78d6"
+}
