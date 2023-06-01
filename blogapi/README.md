@@ -196,3 +196,7 @@ intput set - 2;  then P = 1/2^8
 ## Spring Authentication Filters 
 
 ![](./docs/spring-authentication-filters.png)
+
+## Docker Diagram 
+
+![](./docs/docker-diagram.png)
