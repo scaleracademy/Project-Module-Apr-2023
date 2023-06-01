@@ -2,8 +2,10 @@ server:
   port: 8822
 spring:
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:./blog.db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://db:3306/blog?useSSL=false
+    username: bloguser
+    password: blogpass
   jpa:
     generate-ddl: on
     hibernate:
