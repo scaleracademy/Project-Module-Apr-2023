@@ -37,6 +37,20 @@ public class FareControllerV1Tests {
 
     }
 
+    @Test
+    void fareForDistanceAboveMinKm() throws Exception {
+        mockMvc.perform(get("/api/v1/fare/?dist=3&time=0"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.fare").value("33.00"));
+    }
+
+    @Test
+    void fareForTimeAboveMinWait() throws Exception {
+        mockMvc.perform(get("/api/v1/fare/?dist=0&time=20"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.fare").value("35.00"));
+    }
+
 
     @Test
     void errorWithMissingParams() throws Exception {
