@@ -13,6 +13,10 @@ public class FareServiceV1 {
 
 
     String calcFare(int distance, int time) {
+        if (distance < 0 || time < 0) {
+            throw new IllegalArgumentException("Distance and time must be positive");
+        }
+
         double fare = MIN_FARE;
 
         if (distance > MIN_KM) {
