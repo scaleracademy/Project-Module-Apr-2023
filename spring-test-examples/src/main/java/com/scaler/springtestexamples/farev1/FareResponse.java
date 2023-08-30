@@ -1,4 +1,4 @@
-package com.scaler.springtestexamples.models;
+package com.scaler.springtestexamples.farev1;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

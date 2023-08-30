@@ -1,7 +1,5 @@
-package com.scaler.springtestexamples.controllers;
+package com.scaler.springtestexamples.farev1;
 
-import com.scaler.springtestexamples.models.FareResponse;
-import com.scaler.springtestexamples.services.FareServiceV1;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/fare")
 public class FareControllerV1 {
-    private FareServiceV1 fareService;
+    private final FareServiceV1 fareService;
 
     public FareControllerV1(FareServiceV1 fareService) {
         this.fareService = fareService;

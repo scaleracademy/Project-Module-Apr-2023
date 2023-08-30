@@ -1,4 +1,4 @@
-package com.scaler.springtestexamples.services;
+package com.scaler.springtestexamples.farev1;
 
 import org.springframework.stereotype.Service;
 
@@ -12,12 +12,16 @@ public class FareServiceV1 {
     public static final int MIN_WAIT = 15;
 
 
-    public String calcFare(int distance, int time) {
+    String calcFare(int distance, int time) {
         double fare = MIN_FARE;
 
-        fare += (distance - MIN_KM) * FARE_PER_KM;
+        if (distance > MIN_KM) {
+            fare += (distance - MIN_KM) * FARE_PER_KM;
+        }
 
-        fare += (time - MIN_WAIT) * FARE_PER_MIN;
+        if (time > MIN_WAIT) {
+            fare += (time - MIN_WAIT) * FARE_PER_MIN;
+        }
 
         // Format to 2 decimal places
         return String.format("%.2f", fare);
