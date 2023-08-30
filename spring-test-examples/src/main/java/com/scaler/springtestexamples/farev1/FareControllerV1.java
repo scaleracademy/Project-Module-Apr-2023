@@ -1,17 +1,16 @@
 package com.scaler.springtestexamples.farev1;
 
+import com.scaler.springtestexamples.models.ErrorResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/fare")
 public class FareControllerV1 {
     private final FareServiceV1 fareService;
 
-    public FareControllerV1(FareServiceV1 fareService) {
+    public FareControllerV1(@Autowired FareServiceV1 fareService) {
         this.fareService = fareService;
     }
 
@@ -23,5 +22,10 @@ public class FareControllerV1 {
         String fare = fareService.calcFare(distance, time);
 
         return ResponseEntity.ok(new FareResponse(fare));
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleException(IllegalArgumentException e) {
+        return ResponseEntity.badRequest().body(new ErrorResponse(e.getMessage()));
     }
 }
